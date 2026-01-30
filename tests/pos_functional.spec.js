@@ -4,7 +4,7 @@ const TARGET_URL = 'https://www.swifttranslator.com/';
 const INPUT_SELECTOR = 'textarea';
 const OUTPUT_SELECTOR = 'div.whitespace-pre-wrap.overflow-y-auto.flex-grow.bg-slate-50';
 
-// Helper for realistic typing
+
 async function typeInput(page, text) {
   const input = page.locator(INPUT_SELECTOR);
   await input.clear();
@@ -101,7 +101,7 @@ test.describe('Positive Functional Tests', () => {
 
   test('Pos_Fun_0015: Line breaks', async ({ page }) => {
     await page.goto(TARGET_URL);
-    // Note: Manual typing needed for newlines to register correctly in some UIs
+    
     await page.locator(INPUT_SELECTOR).pressSequentially('oyaa yanna,\nmama innam', {delay: 50});
     await page.waitForTimeout(1500);
     await expect(page.locator(OUTPUT_SELECTOR)).toContainText('ඔයා යන්න,');

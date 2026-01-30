@@ -10,5 +10,16 @@
   "devDependencies": {
     "@playwright/test": "^1.58.0",
     "@types/node": "^25.1.0"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rashmika-Sa/ITPM-Assignment-1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rashmika-Sa/ITPM-Assignment-1/issues"
+  },
+  "homepage": "https://github.com/Rashmika-Sa/ITPM-Assignment-1#readme"
 }

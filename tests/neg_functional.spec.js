@@ -40,14 +40,12 @@ test.describe('Negative Functional Tests', () => {
     await expect(page.locator(OUTPUT_SELECTOR)).toContainText('ඔයාට කොහොමද????');
   });
 
-  test('Neg_Fun_0005: Empty input', async ({ page }) => {
+  test('Neg_Fun_0005: Word Accuracy', async ({ page }) => {
     await page.goto(TARGET_URL);
-    await page.locator(INPUT_SELECTOR).clear();
-    await page.waitForTimeout(500);
-    
-    const content = await page.locator(OUTPUT_SELECTOR).innerText();
-    expect(content.trim()).toBe(''); 
+    await typeInput(page, 'Haii');
+    await expect(page.locator(OUTPUT_SELECTOR)).toContainText('හායි');
   });
+  
 
   test('Neg_Fun_0006: Repeated Characters', async ({ page }) => {
     await page.goto(TARGET_URL);
@@ -75,11 +73,11 @@ test.describe('Negative Functional Tests', () => {
     await expect(page.locator(OUTPUT_SELECTOR)).toContainText('මම හෙට පන්සල් යන්න ඉන්නේ.');
   });
 
-  test('Neg_Fun_0010: Numbers Only', async ({ page }) => {
+  test('Neg_Fun_0010: Numbers in between', async ({ page }) => {
     await page.goto(TARGET_URL);
-    await typeInput(page, '845 654');
+    await typeInput(page, 'magea car 1eka kaedila.');
     
-    await expect(page.locator(OUTPUT_SELECTOR)).toContainText('845 654');
+    await expect(page.locator(OUTPUT_SELECTOR)).toContainText('මගේ car එක කැඩිල.');
   });
 
 });

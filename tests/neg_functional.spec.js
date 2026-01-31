@@ -55,9 +55,9 @@ test.describe('Negative Functional Tests', () => {
 
   test('Neg_Fun_0007: Intentional misspelling', async ({ page }) => {
     await page.goto(TARGET_URL);
-    await typeInput(page, 'mema gidara yenava');
+    await typeInput(page, 'mata heta wada');
     
-    await expect(page.locator(OUTPUT_SELECTOR)).toContainText('මම ගෙදර යනවා');
+    await expect(page.locator(OUTPUT_SELECTOR)).toContainText('මට හෙට වැඩ');
   });
 
   test('Neg_Fun_0008: Random capitalization (Repeat)', async ({ page }) => {
